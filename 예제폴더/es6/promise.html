@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise example</title>
+</head>
+<body>
+  <h1>Promise Example</h1>
+  <pre id="result"></pre>
+  <script>
+   function get(url) {
+     return new Promise((resolve, reject) => {
+       const xhr = new XMLHttpRequest();
+
+       xhr.onreadystatechange = function() {
+         if (xhr.readyState === XMLHttpRequest.DONE) {
+           if (xhr.status === 200) {
+             resolve(xhr.response);
+           } else {
+             reject('Error' + xhr.status);
+           }
+         }
+       };
+       xhr.open('GET', url);
+       xhr.send();
+     });
+   }
+   const url = 'http://jsonplaceholder.typicode.com/posts';
+
+  //  get(url).then(
+  //    result => document.getElementById('result').innerHTML = result,
+  //    error => console.log(error)
+  //  );
+  get(`${url}/1`)
+   .then(result1 => get(`${url}?userID=${JSON.parse(result1).userID}`)) // id가 1인 포스트 작성자의 아이디로 작성된 모든 포스트 검색
+   .then(result2 => document.getElementById('result').innerHTML = result2)
+   .catch(error => console.log(error));
+  </script>
+</body>
+</html>

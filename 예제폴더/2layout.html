@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2단 레이아웃</title>
+  <style>
+    div {
+      border: 1px solid #ccc;
+    }
+
+    #container {
+      width: 960px;
+      padding: 20px;
+      margin: 0 auto;  /* 화면 중앙 배치 */
+    }
+
+    #header {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #contents {
+      width: 620px;
+      padding: 20px;
+      float: left;
+      margin-bottom: 20px;
+    }
+
+    #sidebar {
+      width: 220px;
+      padding: 20px;
+      float: right;
+      margin-bottom: 20px;
+    }
+
+    #footer {
+      clear: both;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>사이트 제목</h1>
+    </div>
+    <div id="sidebar">
+      <h2>사이드바</h2>
+      <ul>
+       <li>법원은 최고법원인 대법원과 각급법원으로 조직된다.
+           국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.</li>
+      </ul>
+    </div>
+    <div id="contents">
+      <h2>본문</h2>
+      <p>국무총리는 국회의 동의를 얻어 대통령이 임명한다. 대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다.
+         모든 국민은 법률이 정하는 바에 의하여 선거권을 가진다. 모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다.
+         신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.</p>
+
+      <p>대통령은 제1항과 제2항의 처분 또는 명령을 한 때에는 지체없이 국회에 보고하여 그 승인을 얻어야 한다.
+         대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 위원은 정당에 가입하거나 정치에 관여할 수 없다.
+         사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다.</p>
+    </div>
+    <div id="footer">
+      <h2>푸터</h2>
+      <p>대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다.</p>
+    </div>
+  </div>
+</body>
+</html>
