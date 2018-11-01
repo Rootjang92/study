@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>새로고침으로 다시 실행해보세요.</p>
+  <script>
+   var fade = function (node) {
+    // free variable
+    var level = 1;
+    var step = function() {
+      var hex = level.toString(16); // 4. 16진수로
+
+      node.style.backgroundColor = '#ff' + hex; // 5. 배경색 변경
+
+      if (level < 15) { // 6.16진수 범위 내인지 확인
+        level += 1;
+        setTimeout(step, 100); // 7. level 증가 반복문
+      }
+    };
+    setTimeout(step, 100); // 3. fade 함수 종료. 하지만 내부 함수 step이 더 오래 살아남는다.
+   }
+   fade(document.body); // 1. document.body 호출
+  </script>
+</body>
+</html>
