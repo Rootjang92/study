@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>클로저 counting</p>
+  <button id="inclease">+</button>
+  <p id="counter">0</p>
+  <script>
+    var count = document.getElementById('counter');
+
+    var increaser = (function () {
+      var counter = 0;
+      return function() {
+        return ++counter;
+      };
+    }());
+
+    document.getElementById('inclease').onclick = function () {
+      count.innerHTML = increaser();
+    };
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>setTimeout</title>
+</head>
+<body>
+  <p>새로고침으로 다시 실행해 보세요.</p>
+  <script>
+    var fade = function(node) {
+      var level = 1; // 2
+      var step = function() {
+        var hex = level.toString(16); // 4
+
+        node.style.backgroundColor = '#ff' + hex; // 5
+
+        if(level < 15) { // 6
+          level += 1;
+          setTimeout(step, 100); // 7
+        }
+      };
+      setTimeout(step, 100); // 3
+    };
+
+    fade(document.body); // 1
+  </script>
+</body>
+</html>
+
+
