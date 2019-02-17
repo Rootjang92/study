@@ -9,3 +9,7 @@ export class Person {
     return 'hello, ' + this.name;
   }
 }
+
+
+const person = new Person('Jang');
+console.log(person.sayHello());
