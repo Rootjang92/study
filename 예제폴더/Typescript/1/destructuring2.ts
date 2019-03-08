@@ -25,7 +25,7 @@ myFunc([10, 20]);
 
 let yourArr: number[] = [1,2,3,4];
 
-let [one, ...others] = myArr;
+let [one, ...others] = yourArr;
 
 console.log(one);
 console.log(others);

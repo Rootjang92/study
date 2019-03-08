@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>야구게임</title>
+</head>
+<body>
+
+</body>
+<script>
+    alert('start the baseball game!')
+    var number = [];
+    var randomNum = Math.floor(Math.random() * 10);
+
+    number[0] = randomNum // 소수점 없애기
+    do {
+      number[1] = randomNum;
+    } while (number[1] === number[0])
+    do {
+      number[2] = randomNum;
+    } while (number[2] === number[0] || number[2] === number[1])
+
+    // 숫자 입력
+
+    var strike = 0;
+    var ball = 0;
+    var inputNum = 0;
+
+    while(true) {
+      inputNum = prompt('숫자 세자리를 입력하세요. 게임을 종료하시려면 0을 입력하세요.')
+      if (inputNum == 0) { break; }
+
+      strike = 0;
+      ball = 0;
+
+      for(var n = 0; n < 3; n++) {
+        if(inputNum[n] === number[n]) {
+          strike++;
+        }
+
+        for(var m = 0; m<3; m++) {
+          if((m != n) && (inputNum[m] == number[m])) {
+            ball++;
+          }
+        }
+      }
+
+      if (strike == 3 ) {
+        alert('3스트라이크');
+        break;
+      } else {
+        alert(strike + '스트라이크, ' + ball + '볼 ');
+      }
+    }
+
+    alert('게임을 종료합니다.');
+  </script>
+</html>

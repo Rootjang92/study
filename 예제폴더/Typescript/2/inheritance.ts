@@ -11,7 +11,7 @@ class Book {
   // 입력 인자가 있으면 사용하고 없으면 기본값
   printInfo(input:string = 'Initial'): void {
     console.log(input);
-    console.log(`${this.title}의 저자는 {this.author}입니다.`);
+    console.log(`${this.title}의 저자는 ${this.author}입니다.`);
   }
 }
 

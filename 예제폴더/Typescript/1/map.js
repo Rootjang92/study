@@ -2,6 +2,7 @@ var map = new Map();
 map.set("myName", "장근호");
 map.set("myAddress", "인천");
 map.set("myAge", 26);
+
 for (var _i = 0, map_1 = map; _i < map_1.length; _i++) {
     var _a = map_1[_i], key = _a[0], value = _a[1];
     console.log(key + "\uC758 \uAC12\uC740 " + value + "\uC785\uB2C8\uB2E4.");

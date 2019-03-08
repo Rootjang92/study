@@ -6,6 +6,7 @@ console.log(second);
 _a = [first, second], second = _a[0], first = _a[1]; // swap
 console.log(first);
 console.log(second);
+
 // 함수의 파라미터 전달 시
 function myFunc(_a) {
     var x = _a[0], y = _a[1];
@@ -13,6 +14,7 @@ function myFunc(_a) {
     console.log("y\uC758 \uAC12\uC740 " + y);
 }
 myFunc([10, 20]);
+
 // spread
 var yourArr = [1, 2, 3, 4];
 var one = myArr[0], others = myArr.slice(1);
